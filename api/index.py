@@ -43,7 +43,7 @@ def run():
       vname = re.findall(regex, result)
       return f'<label for="{placeholder}">{placeholder}<input id="input-{id_name}-{placeholder}" type="text" size="30" style="border:none; background-color:transparent"/></label><script>const input_{id_name} = document.getElementById("input-{id_name}-{placeholder}"); input_{id_name}.addEventListener("focus", ()=>input_{id_name}.style.outline="none");window.onload=()=>input_{vname[0][0]}.focus()</script>' if placeholder else f'<input id="input-{"_".join(id_name.split())}" type="text" size="30" style="border:none; background-color:transparent"/><script>const input_{"_".join(id_name.split())} = document.getElementById("input-{"_".join(id_name.split())}"); input_{"_".join(id_name.split())}.addEventListener("focus", ()=>input_{"_".join(id_name.split())}.style.outline="none"); window.onload=()=>input_{"_".join(vname[0][0].split())}.focus()</script>'
     data = request.json
-    result = re.sub(pattern, replace_input, data)
+    result = re.sub(pattern, replace_input, str(data))
     result = re.sub(r'pip\s*install|pip\s*uninstall|\s*pip\s*', '', result)
     vname = re.findall(regex, result)
     pname = re.findall(disgrex, data)
