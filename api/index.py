@@ -9,6 +9,9 @@ CORS(app, resources={r"/api/*": {"origins": ["https://essolution.dev", "https://
 def apiHandler(key):
   apiKey = os.environ.get("API_KEY")
   return apiKey==key
+@app.route('/')
+def home():
+  return 'Python flask server'
 @app.route('/api/run', methods=['POST'])
 def run():
   try:
