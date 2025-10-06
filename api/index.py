@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import sys
 import io
@@ -11,7 +11,7 @@ def apiHandler(key):
   return apiKey==key
 @app.route('/')
 def home():
-  return 'Python flask server'
+  return render_template('index.html')
 @app.route('/api/run', methods=['POST'])
 def run():
   try:
