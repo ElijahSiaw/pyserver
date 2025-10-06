@@ -1,0 +1,220 @@
+{% extends "layout.html" %}
+{% block title %}Portfolio | Es Solution{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+{% endblock %}
+{% block content %}
+{% set bg = url_for("static", filename="images/bg.png")%}
+  <section>
+    <div>
+<section class="min-h-screen flex items-center justify-center text-white">
+<div class="absolute top-0 left-0 right-0 bg-no-repeat bg-cover bg-center bg-port-bg">
+<div class="backdrop-blur min-h-screen flex">
+    <div class="text-center m-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Hi, I'm KwameLeo Elijah</h1>
+      <p class="text-lg md:text-2xl mb-6">A Web Developer &amp; Designer</p>
+      <a href="#projects" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">View My Work</a>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-6xl m-auto py-20 px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <img src="{{url_for('static',filename='images/user.png')}}" alt="Profile" class="rounded-lg shadow-md">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          I am a passionate developer who loves building user-friendly, modern, and scalable web applications. My expertise includes frontend and backend technologies, design, and problem-solving.
+        </p>
+        <p class="text-gray-600 dark:text-gray-300">
+          With a focus on clean code and innovative designs, I strive to create impactful digital experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-100 dark:bg-gray-800 py-20 px-6 transition-colors duration-300">
+    <div class="max-w-6xl m-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Projects</h2>
+      <p class="text-gray-600 dark:text-gray-300">Some of my recent work</p>
+    </div>
+    <div class="max-w-6xl m-auto grid gap-8 md:grid-cols-3">
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2 reveal">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1" class="rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project One</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Description of the project goes here. Built with modern tools and technologies.</p>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">View Details →</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2 reveal">
+        <img src="https://via.placeholder.com/400x250" alt="Project 2" class="rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Description of the project goes here. Built with modern tools and technologies.</p>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">View Details →</a>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2 reveal">
+        <img src="https://via.placeholder.com/400x250" alt="Project 3" class="rounded-t-lg mb-4">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Project Three</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Description of the project goes here. Built with modern tools and technologies.</p>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="max-w-6xl m-auto py-20 px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl text-gray-600 dark:text-gray-100 font-bold mb-4">Skills</h2>
+      <p class="text-gray-600 dark:text-gray-300">Frameworks &amp; languages I work with</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow p-6 transition transform hover:-translate-y-2 hover:shadow-xl reveal">
+        <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">Frameworks</h3>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300 md:grid md:grid-cols-2 md:gap-4 justify-center items-center">
+          <li class="flex items-center gap-4"><img src="{{url_for('static', filename='react.svg')}}" width="40" height="40" alt="react"/>React</li>
+          <li class="flex items-center gap-4"><img src="{{url_for('static', filename='nextjs.svg')}}" width="40" height="40" alt="nextjs"/>Next.js</li>
+        <li class="flex items-center gap-4"><img src="{{url_for('static', filename='tailwind.svg')}}" width="40" height="40" alt="tailwind css"/>Tailwind CSS</li>
+        <li class="flex items-center gap-4"><img src="{{url_for('static', filename='laravel.svg')}}" width="40" height="40" alt="laravel"/>Laravel</li>
+    <li class="flex items-center gap-4"><img src="{{url_for('static', filename='django.svg')}}" width="40" height="40" alt="django"/>Django</li>
+    <li class="flex items-center gap-4"><img src="{{url_for('static', filename='flask.svg')}}" width="40" height="40" alt="flask"/>Flask</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow p-6 transition transform hover:-translate-y-2 hover:shadow-xl reveal">
+        <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">Languages</h3>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300 md:grid md:grid-cols-2 md:gap-4 justify-center items-center">
+      <li class="flex items-center gap-4"><img src="{{url_for('static', filename='javascript.svg')}}" width="40" height="40" alt="javascript"/>JavaScript</li>
+    <li class="flex items-center gap-4"><img src="{{url_for('static', filename='typescript.svg')}}" width="40" height="40" alt="typescript"/>TypeScript</li>
+   <li class="flex items-center gap-4"><img src="{{url_for('static', filename='python.svg')}}" width="40" height="40" alt="python"/>Python</li>
+    <li class="flex items-center gap-4"><img src="{{url_for('static', filename='php.svg')}}" width="40" height="40" alt="php"/>PHP</li>
+  <li class="flex items-center gap-4"><img src="{{url_for('static', filename='java.svg')}}" width="40" height="40" alt="java"/>Java</li>
+  <li class="flex items-center gap-4"><img src="{{url_for('static', filename='c.svg')}}" width="40" height="40" alt="c++"/>C++</li>
+  <li class="flex items-center gap-4"><img src="{{url_for('static', filename='postgres.svg')}}" width="40" height="40" alt="sql"/>SQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-100 dark:bg-gray-800 py-20 px-6 transition-colors duration-300">
+    <div class="max-w-6xl m-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Services</h2>
+      <p class="text-gray-600 dark:text-gray-300">What I can do for you</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 max-w-6xl m-auto">
+      <!-- Web App -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden reveal">
+        <img src="https://via.placeholder.com/600x300" alt="Web App Development" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Web App Development</h3>
+          <p class="text-gray-600 dark:text-gray-300">Building responsive, scalable, and user-friendly web applications tailored for your business needs using the latest technologies.</p>
+        </div>
+      </div>
+      <!-- Mobile App -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden reveal">
+        <img src="https://via.placeholder.com/600x300" alt="Mobile App Development" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Mobile App Development</h3>
+          <p class="text-gray-600 dark:text-gray-300">Delivering cross-platform and native mobile apps with smooth UI and optimized performance for iOS and Android devices.</p>
+        </div>
+      </div>
+      <!-- AI-powered -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden reveal">
+        <img src="https://via.placeholder.com/600x300" alt="AI-powered Applications" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">AI-powered Applications</h3>
+          <p class="text-gray-600 dark:text-gray-300">Creating intelligent, data-driven solutions powered by machine learning and AI to automate tasks and solve real-world problems.</p>
+        </div>
+      </div>
+      <!-- Desktop App -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow overflow-hidden reveal">
+        <img src="https://via.placeholder.com/600x300" alt="Desktop Applications" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Desktop Applications</h3>
+          <p class="text-gray-600 dark:text-gray-300">Designing efficient and powerful desktop apps that enhance productivity, functionality, and performance across platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="address-info" class="my-20 text-gray-600 dark:text-gray-100 transition-colors duration-300">
+    <div class="max-w-6xl m-auto text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Contact information</h2>
+        <p>I would love to hear from you. Contact me using the information below</p>
+    <div class="flex flex-col justify-center items-center bg-gray-100 dark:bg-gray-800 py-10 px-2 my-10">
+    <div class="my-2 w-full">
+    <address class="grid md:grid-cols-2 gap-2 justify-center">
+    <div class="flex my-2">
+    <div class="contact-icon">📍</div>
+        <div>
+     <h4 class="font-semibold">Address</h4>
+      <p>Bekwai, Ashanti-Ghana</p>
+      </div>
+      </div>
+      <div class="flex">
+      <div class="contact-icon">📞</div>
+        <div>
+      <h4 class="font-semibold">Phone</h4>
+      <p><a href="tel:+233559904036">+233559904036</a></p>
+                    </div>
+                    </div>
+    <div class="flex">
+    <div class="contact-icon">✉️</div>
+      <div>
+    <h4 class="font-semibold">Email</h4>
+    <p><a href="mailto:elijahsiaw@gmail.com">
+      elijahsiaw@gmail.com
+                </a></p>
+          </div>
+      </div>
+      <div class="flex">
+      <div class="contact-icon">🌍</div>
+      <div>
+    <h4 class="font-semibold">Website</h4>
+    <p><a href="https://essolution.dev">
+      https://essolution.dev
+                </a></p>
+          </div>
+            </div>
+      </address>
+      </div>
+      </div>
+      </div>
+      </section>
+  <section id="contact-us" class="max-w-6xl m-auto py-20 px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4 text-gray-600 dark:text-gray-100">Get In Touch</h2>
+      <p class="text-gray-600 dark:text-gray-300">Get in touch today to discuss your project and let's bring your ideas to life through digital innovation.</p>
+    </div>
+    <form method="POST" action="/api/message" class="max-w-3xl m-auto grid gap-6">
+      <input name="fullname" type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-md border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-100"/>
+      <input name="email" type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-md border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-100"/>
+      <input name="org" type="text" placeholder="Your organization name" class="w-full px-4 py-3 rounded-md border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-100"/>
+      <input name="position" type="text" placeholder="Your position" class="w-full px-4 py-3 rounded-md border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-100"/>
+      <textarea name="message" placeholder="Your Message" rows="5" class="w-full px-4 py-3 rounded-md border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-100"></textarea>
+      <button type="submit" class="bg-sky-900/30 dark:bg-teal-600/50 border border-sky-500 dark:border-teal-400 text-white font-semibold px-6 py-3 rounded-lg hover:bg-sky-900/50 dark:hover:bg-teal-800/50 transition">Send Message</button>
+    </form>
+  </section>
+    </div>
+</section>
+{% endblock %}
