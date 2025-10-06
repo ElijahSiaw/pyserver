@@ -1,15 +1,7 @@
 <!doctype html>
-<html class="{% if theme %}{{theme}}{% else %}dark{% endif %}">
+<html class="dark">
   <head>
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}"/>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" href="{{url_for('static',filename='images/favicon.png')}}"/><link rel="icon" href="{{url_for('static',filename='images/favicon.png')}}" sizes="180x180" type="image/png"/>
-      <script src="https://cdn.tailwindcss.com"></script>
-     <script src="{{url_for('static', filename='scripts/scripts.js')}}"></script>
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
   </head>
@@ -17,10 +9,8 @@
   <div class="min-h-screen w-full bg-gray-200 dark:bg-black hover:scrollbar-thumb-sky-500 dark:hover:scrollbar-thumb-gray-500 dark:active:scrollbar-thumb-gray-400 active:scrollbar-thumb-sky-400 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-thumb-rounded-full scrollbar-track-slate-300">
   <section class="m-auto md:max-w-4xl px-2 md:px-4 xl:max-w-5xl xl:px-0 overflow-x-hidden">
   <div className="relative flex flex-col justify-between select-none font-sans">
-  {% include 'components/header.html' %}
-    <main id="content" class="min-h-screen mb-auto mt-[6rem] w-full">{% include 'components/alert.html' %}{% block content %}{% endblock %}</main>
+    <main id="content" class="min-h-screen mb-auto mt-[6rem] w-full">{% block content %}{% endblock %}</main>
 <section class="relative">
-{% include 'components/footer.html' %}
 </section>
 </div>
 </section>
